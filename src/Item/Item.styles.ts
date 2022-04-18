@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
     border-radius: 20px;
     height: 100%;
     margin-top: 2rem;
+    position: relative;
     
     button {
         border-radius: 0 0 20px 20px;
@@ -26,5 +27,14 @@ export const Wrapper = styled.div`
         font-family: Arial;
         padding: 1rem;
         height:100%;
+    }
+    
+    .amount {
+        position: absolute;
+        right:1.5rem;
+        top:1rem;
+        background: red;
+        color: white;
+        padding:1rem;
     }
 `;

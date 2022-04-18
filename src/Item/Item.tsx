@@ -5,11 +5,15 @@ import { CartItemType } from "../App";
 import { Wrapper } from "./Item.styles";
 
 type Props = {
+    cartItems: CartItemType[],
     item: CartItemType;
     handleAddToCart: (clickedItem: CartItemType) => void;
 }
 
 export const Item: React.FC<Props> = (props: Props) => {
+    const item_id = props.item.id;
+    const amount = props.cartItems.find(item => item.id === item_id)?.amount;
+    
     return <Wrapper>
         <div className="image-conatiner">
             <img src={props.item.image} alt={props.item.title}></img>
@@ -25,6 +29,9 @@ export const Item: React.FC<Props> = (props: Props) => {
                 {props.item.price}
             </h3>
         </div>
+        <span className={amount ? "amount": ""}>
+            { amount ? amount: null}
+        </span>
         <Button onClick={()=>{
             props.handleAddToCart(props.item)
         }}>

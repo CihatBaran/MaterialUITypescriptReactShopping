@@ -11,6 +11,12 @@ type Props = {
 }
 
 export const Cart: React.FC<Props> = (props: Props) => {
+    
+    const totalAmount = props.cartItems.reduce(
+        (acc, item)=> {
+          return acc += (item.amount * item.price)
+        }, 0
+    )
     return <Wrapper>
         <h2>Your shopping Cart</h2>
         {props.cartItems.length === 0 ? <p>No Items in the cart.</p> : null}
@@ -22,5 +28,8 @@ export const Cart: React.FC<Props> = (props: Props) => {
                     removeFromCart={props.removeFromCart}
                 />
         ))}
+        <p>Your total is: ${totalAmount.toFixed(2)}</p>
+        
+        
     </Wrapper>
 }
