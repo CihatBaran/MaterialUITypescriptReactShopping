@@ -12,7 +12,7 @@ type Props = {
 
 export const Cart: React.FC<Props> = (props: Props) => {
     
-    const totalAmount = props.cartItems.reduce(
+    const totalPrice = props.cartItems.reduce(
         (acc, item)=> {
           return acc += (item.amount * item.price)
         }, 0
@@ -28,7 +28,7 @@ export const Cart: React.FC<Props> = (props: Props) => {
                     removeFromCart={props.removeFromCart}
                 />
         ))}
-        <p>Your total is: ${totalAmount.toFixed(2)}</p>
+        <p className="total-price">Your total is: ${totalPrice.toFixed(2)}</p>
         
         
     </Wrapper>

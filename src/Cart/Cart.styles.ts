@@ -5,4 +5,10 @@ export const Wrapper = styled.aside`
     width:500px;
     padding:20px;
     
+    .total-price {
+        font-size: 2rem;
+        font-weight: bold;
+         
+    }
+    
 `;
