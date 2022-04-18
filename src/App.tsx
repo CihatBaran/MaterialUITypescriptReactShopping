@@ -2,7 +2,7 @@ import './App.css';
 
 function App() {
   return (
-    <div className="app">
+    <div>
       <h1>Hello to react application</h1>
     </div>
   );
